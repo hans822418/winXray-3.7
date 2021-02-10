@@ -1,0 +1,8 @@
+{
+    "description":"发布 v3.7，增加托盘图标显示代理状态，增加 UWP 代理设置",
+    "format":".lzma",
+    "main":"\\winXray.exe",
+    "updater":"\\winXray.exe",
+    "url":"https://raw.githubusercontent.com/winXray/winXray/master/release/update/",
+    "version":"3.7"
+}

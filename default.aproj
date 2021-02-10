@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project ver="10" name="winXray" libEmbed="true" icon="\forms\ico\app.ico" ui="win" output="winXray.exe" CompanyName="winXray" FileDescription="通用代理客户端" LegalCopyright="Copyright (C) winXray" ProductName="winXray" InternalName="winXray" FileVersion="3.7.0.0" ProductVersion="3.7.0.0" publishDir="\winXray" dstrip="false" local="false">
+	<file name="main" path="main.aardio"/>
+	<folder name="窗体" path="forms" comment="" embed="true" local="false" ignored="false">
+		<folder name="ico" path="forms\ico" comment="forms\ico">
+			<file name="app-direct.ico" path="forms\ico\app-direct.ico" comment="forms\ico\app-direct.ico"/>
+			<file name="app-pac.ico" path="forms\ico\app-pac.ico" comment="forms\ico\app-pac.ico"/>
+			<file name="app.ico" path="forms\ico\app.ico" comment="forms\ico\app.ico"/>
+		</folder>
+		<folder name="main" path="forms\main" comment="forms\main">
+			<file name="outbound.aardio" path="forms\main\outbound.aardio" comment="forms\main\outbound.aardio"/>
+			<file name="pac.aardio" path="forms\main\pac.aardio" comment="forms\main\pac.aardio"/>
+			<file name="v2ray.aardio" path="forms\main\v2ray.aardio" comment="forms\main\v2ray.aardio"/>
+			<folder name="config" path="forms\main\config" comment="forms\main\config">
+				<file name="advancedConfig.aardio" path="forms\main\config\advancedConfig.aardio" comment="forms\main\config\advancedConfig.aardio"/>
+				<file name="jsonConfig.aardio" path="forms\main\config\jsonConfig.aardio" comment="forms\main\config\jsonConfig.aardio"/>
+				<file name="subscription.aardio" path="forms\main\config\subscription.aardio" comment="forms\main\config\subscription.aardio"/>
+				<folder name="coreConfigs" path="forms\main\config\coreConfigs" comment="forms\main\config\coreConfigs">
+					<file name="default.json" path="forms\main\config\coreConfigs\default.json" comment="forms\main\config\coreConfigs\default.json"/>
+					<file name="v2ray.rules.json" path="forms\main\config\coreConfigs\v2ray.rules.json" comment="forms\main\config\coreConfigs\v2ray.rules.json"/>
+				</folder>
+			</folder>
+			<folder name="tools" path="forms\main\tools" comment="forms\main\tools">
+				<file name="github.aardio" path="forms\main\tools\github.aardio" comment="forms\main\tools\github.aardio"/>
+				<file name="qr.aardio" path="forms\main\tools\qr.aardio" comment="forms\main\tools\qr.aardio"/>
+				<file name="tools.aardio" path="forms\main\tools\tools.aardio" comment="forms\main\tools\tools.aardio"/>
+				<file name="uuid.aardio" path="forms\main\tools\uuid.aardio" comment="forms\main\tools\uuid.aardio"/>
+				<file name="uwpExemption.aardio" path="forms\main\tools\uwpExemption.aardio" comment="forms\main\tools\uwpExemption.aardio"/>
+				<file name="youtube.aardio" path="forms\main\tools\youtube.aardio" comment="forms\main\tools\youtube.aardio"/>
+			</folder>
+		</folder>
+	</folder>
+	<folder name="v2RayCore" path="v2ray-core" comment="" embed="false" local="false" ignored="false">
+		<file name="LICENSE" path="v2ray-core\LICENSE" comment="v2ray-core\LICENSE"/>
+		<file name="v2ctl.exe" path="v2ray-core\v2ctl.exe" comment="v2ray-core\v2ctl.exe"/>
+		<file name="v2ray.exe" path="v2ray-core\v2ray.exe" comment="v2ray-core\v2ray.exe"/>
+		<file name="winXray-default-servers.json" path="v2ray-core\winXray-default-servers.json" comment="v2ray-core\winXray-default-servers.json"/>
+	</folder>
+</project>

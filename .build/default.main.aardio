@@ -1,0 +1,40 @@
+//此触发器在生成EXE以后执行
+
+import ide;
+import fsys; 
+import console;
+if( !console.askYesNo('是否生成 winXray.7z,winXray32.7z ? 按Y键继续,按N键取消') ){
+    return console.close();
+}
+
+//获取生成的EXE文件路径
+var publishFile = ide.getPublishPath();
+var projectDir = ide.getProjectDir();
+
+var tempDir = io.joinpath(projectDir,"release/7z-temp");
+fsys.createDir(tempDir,true)
+
+fsys.copy(publishFile,io.joinpath(tempDir,ide.getPublishName())); 
+fsys.copy(io.joinpath(projectDir,"v2ray-core\*.*"),io.joinpath(tempDir,"v2ray-core")); 
+
+import console;
+import sevenZip.cmd;
+
+console.open()
+console.showLoading(" 正在生成 winXray.7z, winXray32.7z");
+
+fsys.delete(io.joinpath(projectDir,"release/winXray.7z"));
+sevenZip.cmd.compress( io.joinpath(tempDir,"*")
+    ,io.joinpath(projectDir,"release/winXray.7z")
+    ,console.log //这里可以设置一个回调函数,输出回显结果
+    )
+
+fsys.delete(io.joinpath(projectDir,"release/winXray32.7z"));
+fsys.copy(io.joinpath(projectDir,"v2ray-core-32\*.*"),io.joinpath(tempDir,"v2ray-core")); 
+sevenZip.cmd.compress( io.joinpath(tempDir,"*")
+    ,io.joinpath(projectDir,"release/winXray32.7z")
+    ,console.log //这里可以设置一个回调函数,输出回显结果
+    )   
+
+fsys.delete(tempDir);
+console.close();
